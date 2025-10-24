@@ -1,69 +1,68 @@
-Registro y visualización de notas
-Proyecto sencillo para registrar notas de un estudiante desde una página web, guardar los datos en un archivo JSON y generar un reporte HTML con una gráfica de barras usando Python.
+# Registro y Visualización de Notas
 
-Características
-Entrada de datos en HTML: Nombre y cinco asignaturas.
+Proyecto para **registrar notas de un estudiante** desde una página web, guardarlas en un archivo JSON y generar un **reporte HTML con gráfica de barras** usando Python.
 
-Guardado en JSON: Selección de ubicación del archivo en el navegador.
+---
 
-Procesamiento con Python: Lectura del JSON, cálculo de promedio y generación de gráfica.
+## Características
 
-Reporte HTML: Tabla de notas, promedio y una imagen de la gráfica.
+- Formulario en HTML para ingresar nombre y notas  
+- Guardado en JSON directamente desde el navegador  
+- Procesamiento en Python para calcular el promedio  
+- Reporte HTML con tabla de notas, promedio y gráfica  
 
-Requisitos
-Frontend: Navegador moderno con soporte para File System Access API (Chrome/Edge).
+---
 
-Backend (procesamiento):
+## Estructura del Proyecto
 
-Python 3.8+
-
-pandas
-
-matplotlib
-
-Instalación de dependencias:
-
-bash
-pip install pandas matplotlib
-Estructura del proyecto
-Código
+```
 .
-├── index.html
-├── notas.json
-├── procesar_notas.py
-├── grafica.png
-└── resultado.html
-index.html: Formulario para capturar y guardar notas en notas.json.
+├── index.html          → Formulario para capturar notas
+├── notas.json          → Archivo generado con los datos
+├── procesar_notas.py   → Script de Python para procesar
+├── grafica.png         → Imagen con la gráfica de barras
+└── resultado.html      → Reporte final con tabla y gráfico
+```
 
-procesar_notas.py: Script que genera grafica.png y resultado.html.
+---
 
-notas.json: Archivo generado con los datos del estudiante.
+## Requisitos
 
-grafica.png: Imagen con la gráfica de barras.
+- Navegador moderno (Chrome o Edge recomendado)  
+- Python 3.8 o superior  
+- Librerías: pandas, matplotlib  
 
-resultado.html: Reporte final.
+Instalación de dependencias:  
+```
+pip install pandas matplotlib
+```
 
-Uso
-1. Capturar notas y guardar JSON
-Abre index.html en el navegador.
+---
 
-Ingresa el nombre y las notas.
+## Uso
 
-Haz clic en “Guardar en JSON”.
+1. **Abrir el formulario**  
+   - Ejecuta `index.html` en el navegador  
+   - Ingresa el nombre y las notas  
+   - Guarda el archivo como `notas.json`  
 
-Elige la ubicación y guarda como notas.json.
+2. **Procesar los datos**  
+   - Ejecuta el script de Python en la misma carpeta:  
+     ```
+     python procesar_notas.py
+     ```
+   - Se generarán `grafica.png` y `resultado.html`  
 
-2. Generar gráfica y reporte
-Ejecuta el script de Python en la misma carpeta donde guardaste notas.json:
+3. **Visualizar el reporte**  
+   - Abre `resultado.html` en tu navegador  
 
-bash
-python procesar_notas.py
-Se crearán grafica.png y resultado.html.
+---
 
-Formato del JSON
-Ejemplo de notas.json:
+## Formato del JSON
 
-json
+Ejemplo de archivo generado:
+
+```
 {
   "Nombre": "Ana Pérez",
   "Matemáticas": 8.5,
@@ -72,16 +71,19 @@ json
   "Historia": 8.0,
   "Inglés": 8.7
 }
-Usa números entre 0 y 10 para las notas.
+```
 
-Respeta los nombres de las claves (incluyen acentos y mayúsculas).
+---
 
-Problemas comunes
-El navegador no guarda el archivo: Usa Chrome o Edge; la File System Access API no funciona completo en todos los navegadores.
+## Problemas Comunes
 
-Promedio muestra NaN: Alguna nota no es numérica. Revisa que los campos tengan números.
+- El navegador no guarda el archivo → Usa Chrome o Edge  
+- Promedio muestra NaN → Alguna nota no es numérica  
+- No encuentra `notas.json` → Asegúrate de que esté en la misma carpeta que el script  
 
-No encuentra notas.json: Verifica que procesar_notas.py se ejecute en la misma carpeta donde guardaste el JSON.
+---
 
-Licencia
-Este proyecto está disponible bajo la licencia MIT. Puedes usarlo y modificarlo libremente.
+## Licencia
+
+Este proyecto está bajo la **Licencia MIT**.  
+Puedes usarlo, modificarlo y compartirlo libremente.  
